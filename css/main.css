@@ -1,0 +1,232 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "iconfont";
+    src: url('iconfont.eot?t=1501421711999'); /* IE9*/
+    src: url('iconfont.eot?t=1501421711999#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff?t=1501421711999') format('woff'), /* chrome, firefox */
+    url('iconfont.ttf?t=1501421711999') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('iconfont.svg?t=1501421711999#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:14px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    font: 14px "Consolas",Microsoft Yahei;
+}
+a {
+    text-decoration: none;
+    color: #e2e2e2;
+    transition: .7s;
+}
+li {
+    list-style: none;
+}
+p {
+    word-break: break-all;
+}
+
+/*头部header*/
+header {
+    position: fixed;
+    top: -120px;
+    left: 0;
+    z-index: 99;
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: 10px;
+    transition: 1s;
+    background: rgba(40,40,40,.6);
+}
+form.search {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 120px;
+    border-top: 1px solid transparent;
+}
+form.search .searchbox {
+    width: 50%;
+    margin: 40px auto 0;
+}
+form.search .searchbox .searchtext {
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    background: none;
+    border-bottom: 1px solid #fff;
+    color: #ffffff;
+}
+input {
+    -webkit-appearance: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Consolas",Microsoft Yahei;
+}
+form.search .searchbox::after {
+    content: "输入文字并回车搜索";
+    display: block;
+    padding: 5px 0 0 10px;
+    vertical-align: bottom;
+    color: #fff;
+}
+form.search span {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+}
+div.head {
+    box-sizing: border-box;
+    max-width: 85%;
+    margin: 0 auto;
+    border-top: 1px solid transparent;
+}
+div.head strong {
+    min-width: 15%;
+    margin: 25px 20px 0 0;
+    float: left;
+}
+div.head strong a {
+    padding: 5px;
+    font-size: 24px;
+    color: #ffffff;
+}
+.contact {
+    min-width: 22%;
+    margin-top: 20px;
+    padding: 5px 5px 0;
+    float: right;
+}
+.contact a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 24px;
+    font-family: "iconfont" !important;
+}
+.contact .pc-none {
+    display: none;
+}
+.f1{
+    float: left;
+}
+nav {
+    width: 45%;
+    margin-top: 20px;
+}
+nav > div {
+    width: 100%;
+    height: 100%;
+}
+ul.menu {
+    height: 50px;
+    margin-left:20px;
+    text-align: justify;
+}
+ul.menu > li {
+    display: inline-block;
+    position: relative;
+    line-height: 40px;
+    padding-bottom: 10px;
+}
+ul.menu::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+ul.menu > li ul.sub-menu {
+    background: rgba(210, 210, 210, 0.6);
+}
+ul.menu > li:hover ul.sub-menu{
+    transform: scale(1);
+    background: raba(255,255,255,.5);
+}
+ul.menu > li ul.sub-menu {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    width: 150px;
+    margin-left: -90px;
+    padding: 15px;
+    background: rgba(40, 40, 40, 0.7);
+    border-radius: 0 0 5px 5px;
+    transition: .5s;
+    transform: scale(0);
+    transform-origin: top;
+}
+ul.menu > li ul.sub-menu li {
+    line-height: 30px;
+    transition: .7s;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.pc-none {
+    display: none;
+}
+div.icon-xiaohuojian {
+    position: fixed;
+    bottom: 30px;
+    right: -50px;
+    font-size: 40px;
+    transition: .7s;
+    color: #16c0f8;
+    cursor: pointer;
+}
+footer {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 160px;
+    padding: 20px 10px 10px;
+    background: #282828;
+    color: #929292;
+}
+.wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+footer .footer-left h2 {
+    margin-right: 10px;
+    padding-right: 10px;
+    font-size: 30px;
+    line-height: 80px;
+}
+.fl {
+    float: left;
+}
+footer .footer-left .introduce {
+    width: 70%;
+    min-height: 80px;
+    line-height: 26px;
+}
+footer .footer-right {
+    width: 38%;
+    height: 80px;
+    text-align: right;
+}
+/*article滚动显示*/
+.main article,.right article{
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.main article.on,.right article.on{
+    opacity: 1;
+    transform: translateY(0);
+}

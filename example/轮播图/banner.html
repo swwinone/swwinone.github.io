@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{margin: 0 ;padding: 0 ;}
+        li{
+            list-style:none;
+        }
+        .wrap{
+            position: relative;
+            width:960px;
+            height: 540px;
+            margin: 80px auto;
+            border: 1px solid #222;
+        }
+        .wrap ul li{
+            position: absolute;
+            width: 960px;
+            height: 540px;
+        }
+        .wrap ul.bg li img{
+            width: 100%;
+            height: 100%;
+            filter:blur(5px);
+        }
+        .wrap ul.pic li img{
+            top:0;left: 0;right: 0;bottom: 0;
+            margin: auto;
+            position: absolute;
+            width: 640px;
+            height: 360px;
+            box-shadow: 0 0 6px #666;
+        }
+        .wrap .btn span{
+            position: absolute;
+            top: 50%;
+            margin-top: -40px;
+            width: 40px;
+            height: 80px;
+            color:#fff;
+            background:rgb(0,0,0,.5);
+            text-align: center;
+            line-height: 80px;
+            font-size:30px;
+            font-weight:bold;
+            cursor: pointer;
+        }
+        .wrap .btn span.next{
+            right: 0;
+        }
+        .wrap ul.lib{
+            display: flex;
+            justify-direction:row;
+            justify-content:space-around;
+            align-items:center;
+            position: absolute;
+            left: 50%;
+            margin-left:-100px;
+            bottom: 10px;
+            width: 200px;
+            height: 30px;
+            background: rgba(255,255,255,.4);
+        }
+        .wrap ul.lib li{
+            position: relative;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background-color:#368;
+            cursor: pointer;
+        }
+        </style>
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="bg">
+            <li><img src="./images/1.jpg" alt="1" width="1920px" height="1080px"></li>
+            <li><img src="./images/2.jpg" alt="2" width="1920px" height="1080px"></li>
+            <li><img src="./images/3.jpg" alt="3" width="1920px" height="1080px"></li>
+            <li><img src="./images/4.jpg" alt="4" width="1920px" height="1080px"></li>
+            <li><img src="./images/5.jpg" alt="5" width="1920px" height="1080px"></li>
+            <li><img src="./images/6.jpg" alt="6" width="1920px" height="1080px"></li>
+            <li><img src="./images/7.jpg" alt="7" width="1920px" height="1080px"></li>
+            <li><img src="./images/8.jpg" alt="8" width="1920px" height="1080px"></li>
+            <li><img src="./images/9.jpg" alt="9" width="1920px" height="1080px"></li>
+            <li><img src="./images/10.jpg" alt="10" width="1920px" height="1080px"></li>
+            <li><img src="./images/11.jpg" alt="11" width="1920px" height="1080px"></li>
+            <li><img src="./images/12.jpg" alt="12" width="1920px" height="1080px"></li>
+        </ul>
+        <ul class="pic">
+            <li><img src="./images/1.jpg" alt="1" width="1920px" height="1080px"></li>
+            <li><img src="./images/2.jpg" alt="2" width="1920px" height="1080px"></li>
+            <li><img src="./images/3.jpg" alt="3" width="1920px" height="1080px"></li>
+            <li><img src="./images/4.jpg" alt="4" width="1920px" height="1080px"></li>
+            <li><img src="./images/5.jpg" alt="5" width="1920px" height="1080px"></li>
+            <li><img src="./images/6.jpg" alt="6" width="1920px" height="1080px"></li>
+            <li><img src="./images/7.jpg" alt="7" width="1920px" height="1080px"></li>
+            <li><img src="./images/8.jpg" alt="8" width="1920px" height="1080px"></li>
+            <li><img src="./images/9.jpg" alt="9" width="1920px" height="1080px"></li>
+            <li><img src="./images/10.jpg" alt="10" width="1920px" height="1080px"></li>
+            <li><img src="./images/11.jpg" alt="11" width="1920px" height="1080px"></li>
+            <li><img src="./images/12.jpg" alt="12" width="1920px" height="1080px"></li>
+        </ul>
+        <div class="btn">
+            <span class="prev"> &lt </span>
+            <span class="next"> &gt </span>
+        </div>
+        <ul class="lib">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        var prev=document.querySelector('.prev');
+        var next=document.querySelector('.next');
+        var $bg=$('.bg li');//获取背景
+        var $pic=$('.pic li');//获取展示
+        var $lib=$('.lib li');
+        var len=$bg.length;
+        var index=0;
+        play();
+        // $bg.eq(0).fadeIn(300).siblings('li').fadeOut(300);
+        // $pic.eq(0).fadeIn(300).siblings('li').fadeOut(300);
+        // $lib.eq(0).css({background:'#fff'}).siblings('li').css({background:'#368'})
+        next.onclick=function(){
+            index++;
+            index%=len;
+            play();
+        }
+        prev.onclick=function(){
+            index--;
+            index=index<0?len:index;
+            play();
+        }
+        //自动轮播图片
+        function fun1(){
+                index++;
+                index%=len;
+                play();
+        }
+        var timer=setInterval(fun1,2000);
+            //鼠標放在圆点去显示本塊內容
+            $lib.mouseenter(function(){
+                clearInterval(timer);
+                    var id=$(this).index();
+                    $bg.eq(id).fadeIn(300).siblings('li').fadeOut(300);
+                    $pic.eq(id).fadeIn(300).siblings('li').fadeOut(300);
+                    $lib.eq(id).css({background:'#fff'}).siblings('li').css({background:'#368'})
+                    }
+                    )
+                //鼠标离开事件
+                $lib.mouseleave(function(){
+                    var id=$(this).index();
+                    timer=setInterval(function(){
+                        index=++id;
+                        index%=len;
+                        play();
+                    },2000);
+                })
+            //实现图片替换显示
+        function play(){
+            $bg.eq(index).fadeIn(300).siblings('li').fadeOut(300);
+            $pic.eq(index).fadeIn(300).siblings('li').fadeOut(300);
+            $lib.eq(index).css({background:'#fff'}).siblings('li').css({background:'#368'})
+        }
+
+
+    </script>
+</body>
+</html>

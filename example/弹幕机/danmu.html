@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D弹幕姬</title>
+    <style type='text/css'>
+        *{margin: 0; padding: 0;}
+        html,body{height:100%;}
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrap{
+            overflow: hidden;
+            width: 70%;
+            height: 500px;
+            background-color: black;
+            margin:100px auto;
+            box-shadow: 0 0 9px #222222;
+            border-radius:20px;
+            padding: 20px;
+        }
+        .wrap .box{
+            position: relative;
+            width: 120%;
+            height: 90%;
+            background-color: black;
+            border-radius:10px;
+        }
+        .wrap .box span {
+            position: absolute;
+            top:10px;
+            left:20px;
+            display: block;
+            padding: 10px;
+            color: #336688;
+        }
+        .wrap .send{
+            display: flex;
+            width: 120%;
+            height: 10%;
+            background-color: black;
+            border-radius: 8px;
+        }
+        .wrap .send input{
+            width: 40%;
+            height: 60%;
+            border-radius: 5px 0 0 5px;
+            box-shadow: 0 0 5px #d9d9d9;//阴影效果
+            text-indent: 1em;      //首行缩进
+        }
+        .wrap .send .send-btn{
+            width: 100px;
+            height: 66%;
+            background-color: #fe943b;
+            color: #ffffff;
+            text-align: center;
+            border-radius: 0 5px 5px 0;
+            box-shadow: 0 0 5px #d9d9d9;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .wrap .send .send-btn:hover {
+            background-color: #4cacdc;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrap flex-column">
+        <div class="box">
+            <img src="./1.jpg" width="100%" height="100%">
+        </div>
+        <div class="send flex-row">
+            <input type="text" class="con" placeholder="弹幕发送[]~(￣▽￣)~*">
+            <div class="send-btn">发射</div>
+        </div>
+    </div>
+    <script>
+    /*
+            需求分析：用户点击发送按钮，把input的内容创建一个span展示在.box中
+            1.元素 .box .con .send-btn span
+            2.事件 鼠标点击事件，键盘事件
+            3.行为
+                1.点击 .send-btn 获取 .con中的内容
+                    规范发送信息，禁止空以及全空格，存储value值
+                2.根据内容动态生成span标签
+                    创建节点document.createElement span 把内容写入span标签  初始化标签位置 把标签放入box中
+                3.message运动
+                    改变left值  定时改变 setInterval
+     // */
+            var Obox=document.querySelector('.box');
+            var Ocon=document.querySelector('.con');
+            var Obtn=document.querySelector('.send-btn');
+            var bw=Obox.offsetWidth;
+            var bh=Obox.offsetHeight;
+            var message='';
+            // 键盘事件
+             Ocon.onkeydown=function(e){
+                e=e||window.event
+                if(e.keyCode===13){
+                    send();
+                }
+             }
+            Obtn.onclick=send;//鼠标事件
+            function send(){//发送弹幕
+                if(Ocon.value.length<=0||(/^\s+$/).test(Ocon.value)){
+                    alert('请输入弹幕内容');
+                    return false;
+                }
+                message=Ocon.value;
+                console.log(message);
+                createElt(message);
+                Ocon.value='';
+            }
+            function createElt(txt){//创建新弹幕
+                var nMessage=document.createElement('span');
+                nMessage.innerHTML=txt;
+                nMessage.style.left=bw+'px';//初始化弹幕位置
+                Obox.appendChild(nMessage);//添加进box
+                roll.call(nMessage,{
+                    luxian:['linear','ease-out'][~~(Math.random()*2)],
+                    color:"#"+(~~(Math.random()*(1<<24))).toString(16),
+                    top:random(0,bh),
+                    fontSize:random(16,32)
+                });
+            }
+            function roll(mes){
+                //如果 对象中不存在timing 初始化mes
+                mes.luxian=mes.luxian||'linear';
+                mes.color=mes.color|| '#fff';
+                mes.top=mes.top|| 0;
+                mes.fontSize=mes.fontSize||16;
+                this._left = parseInt(this.offsetLeft); //获取当前 left值
+                this.style.color = mes.color; //初始化颜色
+                this.style.top = mes.top + 'px';
+                this.style.fontSize = mes.fontSize +'px';
+                this.timer=setInterval(function(){
+                        if(this._left<100){
+                            clearInterval(this.timer);
+                            this.parentNode.removeChild(this);
+                            return;
+                        }
+                        switch(mes.luxian){
+                            case 'linear':
+                                this._left+=-2;
+                                break;
+                            case 'ease-out':
+                               this._left+=(0-this._left)*.01;
+                                break;
+                        }
+                    this.style.left = this._left + 'px';
+                }.bind(this),1000/60);
+            }
+            function random(start,end){ //随机数封装
+            return start + ~~(Math.random()*(end-start));
+        }
+    </script>
+</body>
+</html>
