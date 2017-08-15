@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="keywords" content="web前端博客,html5,web前端笔记,web前端开发,JavaScript,jQuery,css3,html,css,swwinone的博客">
     <meta name="description" content="swwinone前端博客，个人前端笔记与案例展示、学习经验交流！">
+    <base href="https://swwinone.github.io/" target="_blank">
     <title>swwinone blog</title>
 </head>
 <link rel="stylesheet" href="./css/main.css">
@@ -12,41 +14,42 @@
 <link rel="stylesheet" type="text/css" href="./iconfont/iconfont.css">
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 </style>
+
 <body>
     <header>
         <!--搜索栏-->
         <form id="searchform" class="search" action="/index.jsp" method="get">
             <div class="searchbox">
-                <input type="text" class="searchtext"
-                placeholder="请输入文字~">
+                <input type="text" class="searchtext" placeholder="请输入文字~">
             </div>
             <span class="iconfont icon-chuyidong"></span>
         </form>
         <!--导航区-->
-        <div class="head clearfix">
-            <strong class="f1 logo">
-                <a href="https://swwinone.github.io/" title="swwinone blog">swwinone blog</a>
+        <div class="head clearft">
+            <strong class="ft">
+                <a href="https://swwinone.github.io/swwinone.html" title="swwinone blog">swwinone blog</a>
             </strong>
             <!-- 联系方式 -->
             <div class="contact">
                 <a href="javascript:;" class="iconfont icon-sousuo"></a>
-                <a href="https://github.com/swwinone" target="_blank" class="iconfont icon-github mobile-hide"></a>
-                <a href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"target="_blank" class="iconfont icon-qq mobile-hide"></a>
-                <a href="mailto:395980764@qq.com?subject=Hello swwinone blog"target="_blank" class="iconfont icon-youxiang mobile-hide" ></a>
-                <a href="javascript:;" class="pc-none iconfont icon-caidan icon-menu-list2"></a>
+                <a href="https://swwinone.github.io/swwinone.html" target="_blank" class="iconfont icon-github mobile-hide"></a>
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" target="_blank" class="iconfont icon-qq mobile-hide"></a>
+                <a href="mailto:395980764@qq.com?subject=Hello swwinone blog" target="_blank" class="iconfont icon-youxiang mobile-hide"></a>
+                <a href="javascript:;" class="iconfont icon-caidan pc-none"></a>
             </div>
-            <nav class="f1 clearfix">
+            <nav class="ft clearft">
                 <div class="menu-container">
-                    <ul class="menu-hh menu">
+                    <ul class="menu">
                         <li><a href="">主页</a></li>
                         <li><a href="">笔记</a></li>
                         <li><a href="">小案例</a>
-                        <ul class="sub-menu">
-                            <li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><a href="https://www.xuanmo.xin/category/case/jt">html &amp; css练习</a></li>
-                            <li id="menu-item-25" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25"><a href="https://www.xuanmo.xin/category/case/jslx">Js &amp; Jq案列</a></li>
-                            <li id="menu-item-1032" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1032"><a href="https://www.xuanmo.xin/category/case/h5-case">Html5 &amp; CSS3案例</a></li>
-                            <li id="menu-item-813" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-813"><a href="https://www.xuanmo.xin/category/case/other">Other</a></li>
-                        </ul></li>
+                            <ul class="sub-menu">
+                                <li><a href="">html &amp; css练习</a></li>
+                                <li><a href="">Js &amp; Jq案列</a></li>
+                                <li><a href="">Html5 &amp; CSS3案例</a></li>
+                                <li><a href="">Other</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">Java</a></li>
                         <li><a href="">前端相关书籍</a></li>
                         <li><a href="">软件</a></li>
@@ -55,7 +58,7 @@
             </nav>
         </div>
     </header>
-        <!-- 首屏 start -->
+    <!-- 首屏 start -->
     <div class="first-screen mobile-hide">
         <div class="txt">
             <p class="move-left">学习没有捷径</p>
@@ -67,7 +70,7 @@
         <i class="iconfont icon-menu-up"></i>
     </div>
     <div class="mobile-banner pc-none">
-        <ul class="roll-banner clearfix">
+        <ul class="roll-banner clearft">
             <li><img src="./images/6.jpg" alt="1"></li>
             <li><img src="./images/7.jpg" alt="2"></li>
             <li><img src="./images/8.jpg" alt="3"></li>
@@ -77,83 +80,84 @@
     <!-- 首屏 end -->
     <!-- section内容 -->
     <section class="main">
-        <div class="wrap clearfix">
+        <div class="wrap clearft">
             <div class="demo-title">
                 <h2>小案例</h2>
             </div>
-            <div class="article-box clearfix">
+            <div class="article-box clearft">
                 <article class="mobile-article-lg">
-                <a href="./example/%E5%BC%B9%E5%B9%95%E6%9C%BA/danmu.html" class="article-img"><img src="./images/4.png"></a>
-                <div class="con">
-                    <h2 class="article-title"><a href="./example/%E5%BC%B9%E5%B9%95%E6%9C%BA/danmu.html">仿弹幕机</a></h2>
-                    <!-- 摘要 -->
-                    <p>&nbsp; &nbsp;实现弹幕机制，随机字体大小，颜色，速度，出现位置的弹幕[…]</p>
-                </div>
+                    <a href="./example/%E5%BC%B9%E5%B9%95%E6%9C%BA/danmu.html" class="article-img"><img src="./images/4.png"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./example/%E5%BC%B9%E5%B9%95%E6%9C%BA/danmu.html">仿弹幕机</a></h2>
+                        <!-- 摘要 -->
+                        <p>&nbsp; &nbsp;实现弹幕机制，随机字体大小，颜色，速度，出现位置的弹幕[…]</p>
+                    </div>
                 </article>
                 <article class="mobile-article-lg">
-                <a href="./example/%E5%BE%AE%E4%BF%A1%E6%89%93%E9%A3%9E%E6%9C%BA/index.html" class="article-img"><img src="./images/5.gif" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" width="332" height="200"></a>
-                <div class="con">
-                    <h2 class="article-title"><a href="./example/%E5%BE%AE%E4%BF%A1%E6%89%93%E9%A3%9E%E6%9C%BA/index.html">微信打飞机</a></h2>
-                    <!-- 摘要 -->
-                    <p>&nbsp; &nbsp;实现一下微信小游戏，微信打飞机，</p>
-                </div>
+                    <a href="./example/%E5%BE%AE%E4%BF%A1%E6%89%93%E9%A3%9E%E6%9C%BA/index.html" class="article-img"><img src="./images/5.gif" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" width="332" height="200"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./example/%E5%BE%AE%E4%BF%A1%E6%89%93%E9%A3%9E%E6%9C%BA/index.html">微信打飞机</a></h2>
+                        <!-- 摘要 -->
+                        <p>&nbsp; &nbsp;实现一下微信小游戏，微信打飞机，</p>
+                    </div>
                 </article>
                 <article id="post-1626" class="mobile-article-lg">
-                <a href="./example/%E8%AE%A1%E7%AE%97%E5%99%A8/calculator.html" class="article-img"><img src="./images/3.png"></a>
-                <div class="con">
-                    <h2 class="article-title"><a href="./example/%E8%AE%A1%E7%AE%97%E5%99%A8/calculator.html">计算器</a></h2>
-                    <!-- 摘要 -->
-                    <p>&nbsp; &nbsp;实现简单的计算器</p>
-                </div>
+                    <a href="./example/%E8%AE%A1%E7%AE%97%E5%99%A8/calculator.html" class="article-img"><img src="./images/3.png"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./example/%E8%AE%A1%E7%AE%97%E5%99%A8/calculator.html">计算器</a></h2>
+                        <!-- 摘要 -->
+                        <p>&nbsp; &nbsp;实现简单的计算器</p>
+                    </div>
                 </article>
-                </div>
+            </div>
         </div>
-        <div class="wrap clearfix">
+        <div class="wrap clearft">
             <div class="demo-title">
                 <h2>NOTE</h2>
             </div>
-            <div class="article-box clearfix">
+            <div class="article-box clearft">
                 <article class="mobile-article-lg">
-                <a href="./example/%E5%BC%B9%E5%B9%95%E6%9C%BA/danmu.html" class="article-img"><img src="./images/9.jpg"></a>
-                <div class="con">
-                    <h2 class="article-title"><a href="./example/%E5%BC%B9%E5%B9%95%E6%9C%BA/danmu.html">js中正则表达式的使用</a></h2>
-                    <!-- 摘要 -->
-                    <p>实现弹幕机制，随机字体大小，颜色，速度，出现位置的弹幕[…]</p>
-                </div>
+                    <a href="./example/%E5%BC%B9%E5%B9%95%E6%9C%BA/danmu.html" class="article-img"><img src="./images/9.jpg"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./example/%E5%BC%B9%E5%B9%95%E6%9C%BA/danmu.html">js中正则表达式的使用</a></h2>
+                        <!-- 摘要 -->
+                        <p>实现弹幕机制，随机字体大小，颜色，速度，出现位置的弹幕[…]</p>
+                    </div>
                 </article>
                 <article class="mobile-article-lg ">
-                <a href="./example/%E5%BE%AE%E4%BF%A1%E6%89%93%E9%A3%9E%E6%9C%BA/index.html" class="article-img"><img src="./images/10.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" width="332" height="200"></a>
-                <div class="con">
-                    <h2 class="article-title"><a href="./example/%E5%BE%AE%E4%BF%A1%E6%89%93%E9%A3%9E%E6%9C%BA/index.html">json和jsonp的使用</a></h2>
-                    <!-- 摘要 -->
-                    <p>&nbsp; &nbsp;看了bootstrap的一些源码，设计思路很好，对图标的写法是个好的方法，于是借鉴这个方法，用阿里图标和 […]</p>
-                </div>
+                    <a href="./example/%E5%BE%AE%E4%BF%A1%E6%89%93%E9%A3%9E%E6%9C%BA/index.html" class="article-img"><img src="./images/10.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" width="332" height="200"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./example/%E5%BE%AE%E4%BF%A1%E6%89%93%E9%A3%9E%E6%9C%BA/index.html">json和jsonp的使用</a></h2>
+                        <!-- 摘要 -->
+                        <p>&nbsp; &nbsp;看了bootstrap的一些源码，设计思路很好，对图标的写法是个好的方法，于是借鉴这个方法，用阿里图标和 […]</p>
+                    </div>
                 </article>
                 <article id="post-1626" class="mobile-article-lg ">
-                <a href="./example/%E8%AE%A1%E7%AE%97%E5%99%A8/calculator.html" class="article-img"><img src="./images/11.jpg"></a>
-                <div class="con">
-                    <h2 class="article-title"><a href="./example/%E8%AE%A1%E7%AE%97%E5%99%A8/calculator.html">闭包和原型</a></h2>
-                    <!-- 摘要 -->
-                    <p>哈哈哈哈哈哈</p>
-                </div>
+                    <a href="./example/%E8%AE%A1%E7%AE%97%E5%99%A8/calculator.html" class="article-img"><img src="./images/11.jpg"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./example/%E8%AE%A1%E7%AE%97%E5%99%A8/calculator.html">闭包和原型</a></h2>
+                        <!-- 摘要 -->
+                        <p>哈哈哈哈哈哈</p>
+                    </div>
                 </article>
-                </div>
+            </div>
         </div>
     </section>
     <footer>
         <div class="wrap">
-            <div class="clearfix">
-                <div class="fl footer-left clearfix">
+            <div class="clearft">
+                <div class="fl footer-left clearft">
                     <h2 class="fl footer-blog-name">swwinone blog</h2>
                     <p class="fl introduce">越努力越幸运</p>
                 </div>
                 <div class="fr footer-right">
-
                 </div>
             </div>
-            <div class="copyright-wrap clearfix">
+            <div class="copyright-wrap clearft">
                 <p class="fl copyright">Copyright © swwinone blog All Rights Reserved.&nbsp;</p>
-                <p class="fr">Theme by swwinone <a href="https://github.com/swwinone"></a></p>
+                <p class="fr">Theme by swwinone
+                    <a href="https://swwinone.github.io/swwinone.html"></a>
+                </p>
             </div>
         </div>
     </footer>
@@ -161,4 +165,5 @@
     <div class="iconfont icon-xiaohuojian" style="right: 30px;"></div>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
