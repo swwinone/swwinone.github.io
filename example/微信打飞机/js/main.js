@@ -190,11 +190,11 @@ var bianjie=function(){
     }
 }
 //暂停界面重新开始事件
-//function chongxinkaishi(){
-//    location.reload(true);
-//    startdiv.style.display="none";
-//    maindiv.style.display="block";
-//}
+function chongxinkaishi(){
+   location.reload(true);
+   startdiv.style.display="none";
+   maindiv.style.display="block";
+}
 var bodyobj=document.getElementsByTagName("body")[0];
 if(document.addEventListener){
     //为本方飞机添加移动和暂停
