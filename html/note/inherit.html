@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="web前端博客,html5,web前端笔记,web前端开发,JavaScript,jQuery,css3,html,css,swwinone的博客">
+    <meta name="description" content="swwinone前端博客，个人前端笔记与案例展示、学习经验交流！">
+    <title>swwinone blog</title>
+</head>
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="stylesheet" href="../../css/note.css">
+<link rel="stylesheet" href="../../css/article.css">
+<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</style>
+
+<body>
+    <header>
+        <!--导航区-->
+        <div class="head clearft">
+            <strong class="ft">
+                <a href="https://swwinone.github.io/swwinone.html" title="swwinone blog">swwinone blog</a>
+            </strong>
+            <!-- 联系方式 -->
+            <div class="contact">
+                <a href="https://swwinone.github.io/swwinone.html" target="_blank" class="iconfont icon-github mobile-hide"></a>
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" target="_blank" class="iconfont icon-qq mobile-hide"></a>
+                <a href="mailto:395980764@qq.com?subject=Hello swwinone blog" target="_blank" class="iconfont icon-youxiang mobile-hide"></a>
+                <a href="javascript:;" class="iconfont icon-caidan pc-none"></a>
+            </div>
+            <nav class="ft clearft">
+                <div class="menu-container">
+                    <ul class="menu">
+                        <li><a href="https://swwinone.github.io/swwinone.html">主页</a></li>
+                        <li><a href="#" style="color: blue">笔记</a></li>
+                        <li><a href="./example-list1.html">案例</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">html &amp; css练习</a></li>
+                                <li><a href="#">Js &amp; Jq案列</a></li>
+                                <li><a href="#">Html5 &amp; CSS3案例</a></li>
+                                <li><a href="#">Other</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">php&Java</a></li>
+                        <li><a href="#">前端相关书籍</a></li>
+                        <li><a href="#">软件</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="article">
+        <div class="bd-wrapper">
+            <div class="bd-hd">
+                <div class="bd-container">
+                    <div class="bd-container-hd">
+                        <div class="bd-container-hd-t">
+                            <span>当前位置:</span>
+                            <a href="#">首页</a>>
+                            <a href="#">笔记</a>>
+                            <a href="#">继承的几种方式</a>
+                        </div>
+                        <div class="bd-container-hd-bd">
+                            <h3>继承的几种方式</h3>
+                            <a href="#">swwinone</a>
+                            <span>发布于</span>
+                            <time>&nbsp;2017-9-03 21:58</time>
+                            <span>分类:</span>
+                            <a href="#">笔记</a>
+                            <span class="iconfont icon-comment">0</span>
+                            <span class="iconfont icon-yanjing">103</span>
+                        </div>
+                    </div>
+                    <div class="bd-container-bd">
+                        <article class="markdown-body">
+                            <h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>一.简单原型链</h1>
+                            <p>这是实现继承最简单的方式了，真的超简单，核心就一句话（在代码中用注释标明了）</p>
+                            <h2 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.具体实现</h2>
+                            <p>function Super(){
+                                <br> this.val = 1;
+                                <br> this.arr = [1];
+                                <br> }
+                                <br> function Sub(){
+                                <br> // …
+                                <br> }
+                                <br> Sub.prototype = new Super(); // 核心</p>
+                            <p>var sub1 = new Sub();
+                                <br> var sub2 = new Sub();
+                                <br> sub1.val = 2;
+                                <br> sub1.arr.push(2);
+                                <br> alert(sub1.val); // 2
+                                <br> alert(sub2.val); // 1</p>
+                            <p>alert(sub1.arr); // 1, 2
+                                <br> alert(sub2.arr); // 1, 2</p>
+                            <h2 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.核心</h2>
+                            <p>拿父类实例来充当子类原型对象</p>
+                            <h2 id="3"><a name="user-content-3" href="#3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.优缺点</h2>
+                            <h4 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>优点：</h4>
+                            <p>简单，易于实现</p>
+                            <h4 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>缺点：</h4>
+                            <p>修改sub1.arr后sub2.arr也变了，因为来自原型对象的引用属性是所有实例共享的。</p>
+                            <p>可以这样理解：执行sub1.arr.push(2);先对sub1进行属性查找，找遍了实例属性（在本例中没有实例属性），没找到，就开始顺着原型链向上找，拿到了sub1的原型对象，一搜身，发现有arr属性。于是给arr末尾插入了2，所以sub2.arr也变了</p>
+                            <p>创建子类实例时，无法向父类构造函数传参</p>
+                            <h1 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>二.借用构造函数</h1>
+                            <p>简单原型链真够简单，可是存在2个致命缺点简直不能用，于是上个世纪末的jsers就想办法fix这2个缺陷，然后出现了借用构造函数方式</p>
+                            <h2 id="1_1"><a name="user-content-1_1" href="#1_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.具体实现</h2>
+                            <p>function Super(val){
+                                <br> this.val = val;
+                                <br> this.arr = [1];</p>
+                            <pre><code>this.fun = function(){
+    // ...
+}
+</code></pre>
+                            <p>}
+                                <br> function Sub(val){
+                                <br> Super.call(this, val); // 核心
+                                <br> // …
+                                <br> }
+                            </p>
+                            <p>var sub1 = new Sub(1);
+                                <br> var sub2 = new Sub(2);
+                                <br> sub1.arr.push(2);
+                                <br> alert(sub1.val); // 1
+                                <br> alert(sub2.val); // 2</p>
+                            <p>alert(sub1.arr); // 1, 2
+                                <br> alert(sub2.arr); // 1</p>
+                            <p>alert(sub1.fun === sub2.fun); // false</p>
+                            <h2 id="2_1"><a name="user-content-2_1" href="#2_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.核心</h2>
+                            <p>借父类的构造函数来增强子类实例，等于是把父类的实例属性复制了一份给子类实例装上了（完全没有用到原型）</p>
+                            <h2 id="3_1"><a name="user-content-3_1" href="#3_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.优缺点</h2>
+                            <h4 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>优点：</h4>
+                            <p>解决了子类实例共享父类引用属性的问题</p>
+                            <p>创建子类实例时，可以向父类构造函数传参</p>
+                            <p>P.S.前辈就这么高效，两个缺陷瞬间修复</p>
+                            <h4 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>缺点：</h4>
+                            <p>无法实现函数复用，每个子类实例都持有一个新的fun函数，太多了就会影响性能，内存爆炸。。
+                                <br> P.S.好吧，刚修复了共享引用属性的问题，又出现了这个新问题。。
+                            </p>
+                            <h1 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>三.组合继承（最常用）</h1>
+                            <p>目前我们的借用构造函数方式还是有问题（无法实现函数复用），没关系，接着修复，jsers吭哧吭哧又搞出了组合继承</p>
+                            <h2 id="1_2"><a name="user-content-1_2" href="#1_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.具体实现</h2>
+                            <p>function Super(){
+                                <br> // 只在此处声明基本属性和引用属性
+                                <br> this.val = 1;
+                                <br> this.arr = [1];
+                                <br> }
+                                <br> // 在此处声明函数
+                                <br> Super.prototype.fun1 = function(){};
+                                <br> Super.prototype.fun2 = function(){};
+                                <br> //Super.prototype.fun3…
+                                <br> function Sub(){
+                                <br> Super.call(this); // 核心
+                                <br> // …
+                                <br> }
+                                <br> Sub.prototype = new Super(); // 核心</p>
+                            <p>var sub1 = new Sub(1);
+                                <br> var sub2 = new Sub(2);
+                                <br> alert(sub1.fun === sub2.fun); // true</p>
+                            <h2 id="2_2"><a name="user-content-2_2" href="#2_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.核心</h2>
+                            <p>把实例函数都放在原型对象上，以实现函数复用。同时还要保留借用构造函数方式的优点，通过Super.call(this);继承父类的基本属性和引用属性并保留能传参的优点；通过Sub.prototype = new Super();继承父类函数，实现函数复用</p>
+                            <h2 id="3_2"><a name="user-content-3_2" href="#3_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.优缺点</h2>
+                            <h4 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>优点：</h4>
+                            <p>不存在引用属性共享问题
+                                <br> 可传参
+                                <br> 函数可复用
+                            </p>
+                            <h4 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>缺点:</h4>
+                            <p>（一点小瑕疵）子类原型上有一份多余的父类实例属性，因为父类构造函数被调用了两次，生成了两份，而子类实例上的那一份屏蔽了子类原型上的。。。又是内存浪费，比刚才情况好点，不过确实是瑕疵
+                                <br> P.S.如果无法理解这个”多余“，可以查看黯羽轻扬：JS学习笔记2_面向对象，文章末尾有更详细的解释
+                            </p>
+                            <h1 id="_10"><a name="user-content-_10" href="#_10" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>四.寄生组合继承（最佳方式）</h1>
+                            <p>从名字就能看出又是对组合继承的优化，不是说组合继承有瑕疵吗，没关系，我们接着追求完美</p>
+                            <h2 id="1_3"><a name="user-content-1_3" href="#1_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.具体实现</h2>
+                            <p>function beget(obj){ // 生孩子函数 beget：龙beget龙，凤beget凤。
+                                <br> var F = function(){};
+                                <br> F.prototype = obj;
+                                <br> return new F();
+                                <br> }
+                                <br> function Super(){
+                                <br> // 只在此处声明基本属性和引用属性
+                                <br> this.val = 1;
+                                <br> this.arr = [1];
+                                <br> }
+                                <br> // 在此处声明函数
+                                <br> Super.prototype.fun1 = function(){};
+                                <br> Super.prototype.fun2 = function(){};
+                                <br> //Super.prototype.fun3…
+                                <br> function Sub(){
+                                <br> Super.call(this); // 核心
+                                <br> // …
+                                <br> }
+                                <br> var proto = beget(Super.prototype); // 核心
+                                <br> proto.constructor = Sub; // 核心
+                                <br> Sub.prototype = proto; // 核心</p>
+                            <p>var sub = new Sub();
+                                <br> alert(sub.val);
+                                <br> alert(sub.arr);
+                            </p>
+                            <h2 id="2_3"><a name="user-content-2_3" href="#2_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.核心</h2>
+                            <p>用beget(Super.prototype);切掉了原型对象上多余的那份父类实例属性
+                                <br> P.S.啥？没看明白？哦哦~，忘记说原型式和寄生式继承了，就说怎么总觉得忘了锁门。。这记性
+                                <br> P.S.寄生组合式继承，这名字不是很贴切，和寄生式继承关系并不是特别大
+                                <br> 3.优缺点
+                            </p>
+                            <h4 id="_11"><a name="user-content-_11" href="#_11" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>优点：完美了</h4>
+                            <h4 id="_12"><a name="user-content-_12" href="#_12" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>缺点：理论上没有了（如果用起来麻烦不算缺点的话。。）</h4>
+                            <p>P.S.用起来麻烦是一方面，另一方面是因为寄生组合式继承出现的比较晚，是21世纪初的东西，大家等不起这么久，所以组合继承是最常用的，而这个理论上完美的方案却只是课本上的最佳方式了</p>
+                            <h1 id="_13"><a name="user-content-_13" href="#_13" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>五.原型式</h1>
+                            <p>其实介绍完上面的完美方案就可以结束了，但从组合继承到完美方案好像有一段不小的思维跳跃，有必要把故事说清楚</p>
+                            <h2 id="1_4"><a name="user-content-1_4" href="#1_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.具体实现</h2>
+                            <p>function beget(obj){ // 生孩子函数 beget：龙beget龙，凤beget凤。
+                                <br> var F = function(){};
+                                <br> F.prototype = obj;
+                                <br> return new F();
+                                <br> }
+                                <br> function Super(){
+                                <br> this.val = 1;
+                                <br> this.arr = [1];
+                                <br> }
+                            </p>
+                            <p>// 拿到父类对象
+                                <br> var sup = new Super();
+                                <br> // 生孩子
+                                <br> var sub = beget(sup); // 核心
+                                <br> // 增强
+                                <br> sub.attr1 = 1;
+                                <br> sub.attr2 = 2;
+                                <br> //sub.attr3…
+                            </p>
+                            <p>alert(sub.val); // 1
+                                <br> alert(sub.arr); // 1
+                                <br> alert(sub.attr1); // 1
+                                <br> P.S.诶~看到了没，生孩子函数beget出现了
+                            </p>
+                            <h2 id="2_4"><a name="user-content-2_4" href="#2_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.核心</h2>
+                            <p>用生孩子函数得到得到一个“纯洁”的新对象（“纯洁”是因为没有实例属性），再逐步增强之（填充实例属性）
+                                <br> P.S.ES5提供了Object.create()函数，内部就是原型式继承，IE9+支持
+                                <br> 3.优缺点
+                            </p>
+                            <h4 id="_14"><a name="user-content-_14" href="#_14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>优点：</h4>
+                            <p>从已有对象衍生新对象，不需要创建自定义类型（更像是对象复制，而不是继承。。）</p>
+                            <h4 id="_15"><a name="user-content-_15" href="#_15" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>缺点：</h4>
+                            <p>原型引用属性会被所有实例共享，因为是用整个父类对象来充当了子类原型对象，所以这个缺陷无可避免</p>
+                            <p>无法实现代码复用（新对象是现取的，属性是现添的，都没用函数封装，怎么复用）</p>
+                            <p>P.S.这东西和继承有很大关系吗？为什么尼古拉斯把它也列为实现继承的一种方式？关系不大，但有一定关系</p>
+                            <h1 id="_16"><a name="user-content-_16" href="#_16" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>六.寄生式</h1>
+                            <p>这名字太扯了，而且寄生式是一种模式（套路），并不是只能用来实现继承</p>
+                            <h2 id="1_5"><a name="user-content-1_5" href="#1_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.具体实现</h2>
+                            <p>function beget(obj){ // 生孩子函数 beget：龙beget龙，凤beget凤。
+                                <br> var F = function(){};
+                                <br> F.prototype = obj;
+                                <br> return new F();
+                                <br> }
+                                <br> function Super(){
+                                <br> this.val = 1;
+                                <br> this.arr = [1];
+                                <br> }
+                                <br> function getSubObject(obj){
+                                <br> // 创建新对象
+                                <br> var clone = beget(obj); // 核心
+                                <br> // 增强
+                                <br> clone.attr1 = 1;
+                                <br> clone.attr2 = 2;
+                                <br> //clone.attr3…
+                            </p>
+                            <pre><code>return clone;
+</code></pre>
+                            <p>}</p>
+                            <p>var sub = getSubObject(new Super());
+                                <br> alert(sub.val); // 1
+                                <br> alert(sub.arr); // 1
+                                <br> alert(sub.attr1); // 1</p>
+                            <h2 id="2_5"><a name="user-content-2_5" href="#2_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.核心</h2>
+                            <p>给原型式继承穿了个马甲而已，看起来更像继承了（上面介绍的原型式继承更像是对象复制）
+                                <br> 注意：beget函数并不是必须的，换言之，创建新对象 -&gt; 增强 -&gt; 返回该对象，这样的过程叫寄生式继承，新对象是如何创建的并不重要（用beget生的，new出来的，字面量现做的。。都可以）</p>
+                            <h2 id="3_3"><a name="user-content-3_3" href="#3_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.优缺点</h2>
+                            <h4 id="_17"><a name="user-content-_17" href="#_17" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>优点：</h4>
+                            <p>还是不需要创建自定义类型</p>
+                            <h4 id="_18"><a name="user-content-_18" href="#_18" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>缺点：</h4>
+                            <p>无法实现函数复用（没用到原型，当然不行）
+                                <br> P.S.剧情解析：有缺陷的寄生式继承 + 不完美的组合继承 = 完美的寄生组合式继承，不妨回去找找看哪里用到了寄生</p>
+                        </article>
+                    </div>
+                </div>
+                <div class="bd-sidebar">
+                    <div class="sidebar-column sidebar">
+                        <div class="sidebar-container">
+                            <h3><i class="iconfont icon-caidan"></i>子类列表</h3>
+                            <ul class="sidebar-menu">
+                                <li><a href="#">js&jq</a></li>
+                                <li><a href="#">css</a></li>
+                                <li><a href="#">php&java</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-hot sidebar">
+                        <div class="sidebar-container">
+                            <h3><i></i>类目列表</h3>
+                            <ul class="sidebar-menu">
+                                <li><a href="#">web特效</a></li>
+                                <li><a href="#">页面动态</a></li>
+                                <li><a href="#">功能开发</a></li>
+                                <li><a href="#">插件封装</a></li>
+                                <li><a href="#">Js小游戏</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="wrap">
+            <div class="clearft">
+                <div class="fl footer-left clearft">
+                    <h2 class="fl footer-blog-name">swwinone blog</h2>
+                    <p class="fl introduce">越努力越幸运</p>
+                </div>
+                <div class="fr footer-right">
+                </div>
+            </div>
+            <div class="copyright-wrap clearft">
+                <p class="fl copyright">Copyright © swwinone blog All Rights Reserved.&nbsp;</p>
+                <p class="fr">
+                    <a href="https://swwinone.github.io/swwinone.html">Theme by swwinone</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- 回到最上 -->
+    <div class="iconfont icon-xiaohuojian" style="right: 30px;"></div>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>
