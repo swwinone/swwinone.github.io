@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        *{
+            padding: 0;margin:0;
+        }
+        #canvas{
+            background-color: #000;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+    <script>
+        // 请求动画关键帧
+        window.requestAnimFrame=(function(){
+                return window.requestAnimationFrame||
+                window.webkitRequestAnimationFrame||
+                window.mozRequestAnimationFrame||
+                function(callback){
+                    width.setInterval(callback, 1000/60);
+                };
+        })();
+        //页面命名空间
+        var Canvas={};
+        Canvas.anim={
+            //初始化
+            init:function(){
+                var canvas=document.getElementById('canvas');
+                canvas.width=window.innerWidth;
+                canvas.height=window.innerHeight;
+                this.ctx=canvas.getContext('2d');//创建画笔，2d环境
+                this.cw=canvas.width;
+                this.ch=canvas.height;
+                this.particles=[];
+                this.letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                this.maxparticles=100;
+            },
+            //执行动画
+            render:function(){
+                this.fadeCanvas();
+                var particle={//创建字母初始值
+                    x:this.cw/2,
+                    y:this.ch,
+                    xspeed:(Math.random()*20)-10,
+                    yspeed:(Math.random()*20)-10,
+                    size:10,
+                    character:this.letters[~~(Math.random()*this.letters.length)],
+                    color:[150,100,50,.7]
+                }
+                this.particles.push(particle);
+                this.drawParticles();
+                this.clean();
+            },
+            //绘制字母
+            drawParticles:function(){
+                var count=this.particles.length;
+                for (var i =0; i < count; i++) {
+                    var particle=this.particles[i];
+                    var h=particle.color[0],
+                        s=particle.color[1]+'%',
+                        l=particle.color[2]+'%',
+                        a=particle.color[3];
+                    var hsla='hsla('+h+','+s+','+l+','+a+')';
+                    var c=this.ctx;
+                    c.font="12px sans-serif";
+                    c.fillStyle=hsla;
+                    c.fillText(particle.character,particle.x,particle.y);//画文字
+
+                    particle.x+=particle.xspeed;
+                    particle.y+=particle.yspeed;
+                    particle.size*=.98;
+                    particle.color[2]*=.98;
+                    particle.color[0]+=1;
+                    if(particle.color[0]>253){
+                        particle.color[2]=100;
+                    }
+                    }
+            },
+            //背景覆盖
+            fadeCanvas:function(){
+                this.ctx.fillStyle="rgba(0,0,0,.5)";
+                this.ctx.fillRect(0,0,this.cw,this.ch);
+            },
+            //清楚
+            clean:function(){
+                if(this.particles.length>this.maxparticles)
+                {
+                    this.particles.shift();
+                }
+            }
+        }
+        Canvas.anim.init();
+        (function animloop(){
+            requestAnimFrame(animloop);
+            Canvas.anim.render();
+        })();
+    </script>
+</html>

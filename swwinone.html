@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="web前端博客,html5,web前端笔记,web前端开发,JavaScript,jQuery,css3,html,css,swwinone的博客">
+    <meta name="description" content="swwinone前端博客，个人前端笔记与案例展示、学习经验交流！">
+    <base href="https://swwinone.github.io/swwinone.html" target="_blank">
+    <title>swwinone blog</title>
+</head>
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/mobile.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="./iconfont/iconfont.css">
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</style>
+
+<body>
+    <header>
+        <!--搜索栏-->
+        <form id="searchform" class="search" action="/index.jsp" method="get">
+            <div class="searchbox">
+                <input type="text" class="searchtext" placeholder="请输入文字~">
+            </div>
+            <span class="iconfont icon-chuyidong"></span>
+        </form>
+        <!--导航区-->
+        <div class="head clearft">
+            <strong class="ft">
+                <a href="https://swwinone.github.io/swwinone.html" title="swwinone blog">swwinone blog</a>
+            </strong>
+            <!-- 联系方式 -->
+            <div class="contact">
+                <a href="javascript:;" class="iconfont icon-sousuo"></a>
+                <a href="https://swwinone.github.io/swwinone.html" target="_blank" class="iconfont icon-github mobile-hide"></a>
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" target="_blank" class="iconfont icon-qq mobile-hide"></a>
+                <a href="mailto:395980764@qq.com?subject=Hello swwinone blog" target="_blank" class="iconfont icon-youxiang mobile-hide"></a>
+                <a href="javascript:;" class="iconfont icon-caidan pc-none"></a>
+            </div>
+            <nav class="ft clearft">
+                <div class="menu-container">
+                    <ul class="menu">
+                        <li><a href="https://swwinone.github.io/swwinone.html">主页</a></li>
+                        <li><a href="./html/list/note-list1.html">笔记</a></li>
+                        <li><a href="./html/list/example-list1.html">案例</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">html &amp; css练习</a></li>
+                                <li><a href="#">Js &amp; Jq案列</a></li>
+                                <li><a href="#">Html5 &amp; CSS3案例</a></li>
+                                <li><a href="#">Other</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">php&Java</a></li>
+                        <li><a href="#">前端相关书籍</a></li>
+                        <li><a href="#">软件</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- 首屏 start -->
+    <div class="first-screen mobile-hide">
+        <div class="txt">
+            <p class="move-left">学习没有捷径</p>
+            <p class="move-left">每天的努力 只为拥抱美好的明天</p>
+            <h1><span>swwinone blog</span></h1>
+            <p class="move-right">Where are you now</p>
+            <p class="move-right">Another dream</p>
+        </div>
+        <i class="iconfont icon-menu-up"></i>
+    </div>
+    <div class="mobile-banner pc-none">
+        <ul class="roll-banner clearft">
+            <li><img src="./images/6.jpg" alt="1"></li>
+            <li><img src="./images/7.jpg" alt="2"></li>
+            <li><img src="./images/8.jpg" alt="3"></li>
+        </ul>
+        <ul class="plugin-banner-btn"></ul>
+    </div>
+    <!-- 首屏 end -->
+    <!-- section内容 -->
+    <section class="main">
+        <!-- 案例 -->
+        <div class="wrap clearft">
+            <div class="demo-title">
+                <h2>小案例</h2>
+            </div>
+            <div class="article-box clearft">
+                <article class="mobile-article-lg">
+                    <a href="./example/danmu/danmu.html" class="article-img"><img src="./images/4.png"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./example/danmu/danmu.html">仿弹幕机</a></h2>
+                        <!-- 摘要 -->
+                        <p>&nbsp; &nbsp;实现弹幕机制，随机字体大小，颜色，速度，出现位置的弹幕[…]</p>
+                    </div>
+                </article>
+                <article class="mobile-article-lg">
+                    <a href="./example/%E6%94%BE%E5%A4%A7%E9%95%9C/demo.html" class="article-img"><img src="./images/6.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" width="332" height="200"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./example/%E6%94%BE%E5%A4%A7%E9%95%9C/demo.html">放大镜</a></h2>
+                        <!-- 摘要 -->
+                        <p>&nbsp; &nbsp;实现图片的放大效果，模拟购物网站上实物图片鼠标跟随图片放大</p>
+                    </div>
+                </article>
+                <article id="post-1626" class="mobile-article-lg">
+                    <a href="./example/%E8%AE%A1%E7%AE%97%E5%99%A8/calculator.html" class="article-img"><img src="./images/3.png"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./example/%E8%AE%A1%E7%AE%97%E5%99%A8/calculator.html">计算器</a></h2>
+                        <!-- 摘要 -->
+                        <p>&nbsp; &nbsp;实现简单的计算器</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <!-- 笔记 -->
+        <div class="wrap clearft">
+            <div class="demo-title">
+                <h2>NOTE</h2>
+            </div>
+            <div class="article-box clearft">
+                <article class="mobile-article-lg">
+                    <a href="./html/note/reg.html" class="article-img"><img src="./images/9.jpg"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./html/note/reg.html">js中正则表达式的使用</a></h2>
+                        <!-- 摘要 -->
+                        <p>正则表达式中常用的符号，以及js中常用的正则表达式</p>
+                    </div>
+                </article>
+                <article class="mobile-article-lg ">
+                    <a href="./html/note/ajax.html" class="article-img"><img src="./images/10.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" width="332" height="200"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./html/note/ajax.html">简单的Ajax原生js封装</a></h2>
+                        <!-- 摘要 -->
+                        <p>&nbsp; &nbsp;分别对get和post方法进行封装，然后在封装一个简易的ajaxtool […]</p>
+                    </div>
+                </article>
+                <article id="post-1626" class="mobile-article-lg ">
+                    <a href="./html/note/inherit.html" class="article-img"><img src="./images/11.jpg"></a>
+                    <div class="con">
+                        <h2 class="article-title"><a href="./html/note/inherit.html">继承的几种方式</a></h2>
+                        <!-- 摘要 -->
+                        <p>原型链继承，构造函数继承，组合继承，寄生型[...]</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="wrap">
+            <div class="clearft">
+                <div class="fl footer-left clearft">
+                    <h2 class="fl footer-blog-name">swwinone blog</h2>
+                    <p class="fl introduce">越努力越幸运</p>
+                </div>
+                <div class="fr footer-right">
+                </div>
+            </div>
+            <div class="copyright-wrap clearft">
+                <p class="fl copyright">Copyright © swwinone blog All Rights Reserved.&nbsp;</p>
+                <p class="fr">Theme by swwinone
+                    <a href="https://swwinone.github.io/swwinone.html"></a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- 回到最上 -->
+    <div class="iconfont icon-xiaohuojian" style="right: 30px;"></div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

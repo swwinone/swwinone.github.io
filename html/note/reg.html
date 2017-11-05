@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="web前端博客,html5,web前端笔记,web前端开发,JavaScript,jQuery,css3,html,css,swwinone的博客">
+    <meta name="description" content="swwinone前端博客，个人前端笔记与案例展示、学习经验交流！">
+    <title>swwinone blog</title>
+</head>
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="stylesheet" href="../../css/note.css">
+<link rel="stylesheet" href="../../css/article.css">
+<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</style>
+
+<body>
+    <header>
+        <!--导航区-->
+        <div class="head clearft">
+            <strong class="ft">
+                <a href="https://swwinone.github.io/swwinone.html" title="swwinone blog">swwinone blog</a>
+            </strong>
+            <!-- 联系方式 -->
+            <div class="contact">
+                <a href="https://swwinone.github.io/swwinone.html" target="_blank" class="iconfont icon-github mobile-hide"></a>
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" target="_blank" class="iconfont icon-qq mobile-hide"></a>
+                <a href="mailto:395980764@qq.com?subject=Hello swwinone blog" target="_blank" class="iconfont icon-youxiang mobile-hide"></a>
+                <a href="javascript:;" class="iconfont icon-caidan pc-none"></a>
+            </div>
+            <nav class="ft clearft">
+                <div class="menu-container">
+                    <ul class="menu">
+                        <li><a href="https://swwinone.github.io/swwinone.html">主页</a></li>
+                        <li><a href="#" style="color: blue">笔记</a></li>
+                        <li><a href="./example-list1.html">案例</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">html &amp; css练习</a></li>
+                                <li><a href="#">Js &amp; Jq案列</a></li>
+                                <li><a href="#">Html5 &amp; CSS3案例</a></li>
+                                <li><a href="#">Other</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">php&Java</a></li>
+                        <li><a href="#">前端相关书籍</a></li>
+                        <li><a href="#">软件</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="article">
+        <div class="bd-wrapper">
+            <div class="bd-hd">
+                <div class="bd-container">
+                    <div class="bd-container-hd">
+                        <div class="bd-container-hd-t">
+                            <span>当前位置:</span>
+                            <a href="#">首页</a>>
+                            <a href="#">笔记</a>>
+                            <a href="#">正则表达式</a>
+                        </div>
+                        <div class="bd-container-hd-bd">
+                            <h3>正则表达式的使用</h3>
+                            <a href="#">swwinone</a>
+                            <span>发布于</span>
+                            <time>&nbsp;2017-9-03 21:58</time>
+                            <span>分类:</span>
+                            <a href="#">笔记</a>
+                            <span class="iconfont icon-comment">0</span>
+                            <span class="iconfont icon-yanjing">103</span>
+                        </div>
+                    </div>
+                    <div class="bd-container-bd">
+                        <article class="markdown-body">
+                            <h4 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>正则表达式里面的常用符号</h4>
+                            <p>\ 将下一个字符标记为一个特殊字符、或一个原义字符、或一个 向后引用、或一个八进制转义符。例如，&rsquo;n&rsquo; 匹配字符 &ldquo;n&rdquo;。&rsquo;\n&rsquo; 匹配一个换行符。序列 &lsquo;\&lsquo; 匹配 &ldquo;" 而 &ldquo;(&rdquo; 则匹配 &ldquo;(&ldquo;。
+                                <br /> ^ 匹配输入字符串的开始位置。如果设置了 RegExp 对象的 Multiline 属性，^ 也匹配 &lsquo;\n&rsquo; 或 &lsquo;\r&rsquo; 之后的位置。
+                                <br /> $ 匹配输入字符串的结束位置。如果设置了RegExp 对象的 Multiline 属性，$ 也匹配 &lsquo;\n&rsquo; 或 &lsquo;\r&rsquo; 之前的位置。
+                                <br />
+                                <em>   匹配前面的子表达式零次或多次。例如，zo</em> 能匹配 &ldquo;z&rdquo; 以及 &ldquo;zoo&rdquo;。<em> 等价于{0,}。<br />
++   匹配前面的子表达式一次或多次。例如，&rsquo;zo+&rsquo; 能匹配 &ldquo;zo&rdquo; 以及 &ldquo;zoo&rdquo;，但不能匹配 &ldquo;z&rdquo;。+ 等价于 {1,}。<br />
+?   匹配前面的子表达式零次或一次。例如，&rdquo;do(es)?&rdquo; 可以匹配 &ldquo;do&rdquo; 或 &ldquo;does&rdquo; 中的&rdquo;do&rdquo; 。? 等价于 {0,1}。<br />
+{n} n 是一个非负整数。匹配确定的 n 次。例如，&rsquo;o{2}&rsquo; 不能匹配 &ldquo;Bob&rdquo; 中的 &lsquo;o&rsquo;，但是能匹配 &ldquo;food&rdquo; 中的两个 o。<br />
+{n,}    n 是一个非负整数。至少匹配n 次。例如，&rsquo;o{2,}&rsquo; 不能匹配 &ldquo;Bob&rdquo; 中的 &lsquo;o&rsquo;，但能匹配 &ldquo;foooood&rdquo; 中的所有 o。&rsquo;o{1,}&rsquo; 等价于 &lsquo;o+&rsquo;。&rsquo;o{0,}&rsquo; 则等价于 &lsquo;o</em>&lsquo;。
+                                <br /> {n,m} m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，&rdquo;o{1,3}&rdquo; 将匹配 &ldquo;fooooood&rdquo; 中的前三个 o。&rsquo;o{0,1}&rsquo; 等价于 &lsquo;o?&rsquo;。请注意在逗号和两个数之间不能有空格。
+                                <br /> ? 当该字符紧跟在任何一个其他限制符 (*, +, ?, {n}, {n,}, {n,m}) 后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串 &ldquo;oooo&rdquo;，&rsquo;o+?&rsquo; 将匹配单个 &ldquo;o&rdquo;，而 &lsquo;o+&rsquo; 将匹配所有 &lsquo;o&rsquo;。
+                                <br /> . 匹配除 &ldquo;\n&rdquo; 之外的任何单个字符。要匹配包括 &lsquo;\n&rsquo; 在内的任何字符，请使用象 &lsquo;[.\n]&rsquo; 的模式。
+                                <br /> (pattern) 匹配 pattern 并获取这一匹配。所获取的匹配可以从产生的 Matches 集合得到，在VBScript 中使用 SubMatches 集合，在JScript 中则使用 $0…$9 属性。要匹配圆括号字符，请使用 &lsquo;(&lsquo; 或 &lsquo;)&lsquo;。
+                                <br /> (?:pattern) 匹配 pattern 但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用 &ldquo;或&rdquo; 字符 (|) 来组合一个模式的各个部分是很有用。例如， &lsquo;industr(?:y|ies) 就是一个比 &lsquo;industry|industries&rsquo; 更简略的表达式。
+                                <br /> (?=pattern) 正向预查，在任何匹配 pattern 的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，&rsquo;Windows (?=95|98|NT|2000)&rsquo; 能匹配 &ldquo;Windows 2000&rdquo; 中的 &ldquo;Windows&rdquo; ，但不能匹配 &ldquo;Windows 3.1&rdquo; 中的 &ldquo;Windows&rdquo;。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。
+                                <br /> (?!pattern) 负向预查，在任何不匹配 pattern 的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如&rsquo;Windows (?!95|98|NT|2000)&rsquo; 能匹配 &ldquo;Windows 3.1&rdquo; 中的 &ldquo;Windows&rdquo;，但不能匹配 &ldquo;Windows 2000&rdquo; 中的 &ldquo;Windows&rdquo;。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始
+                                <br /> x|y 匹配 x 或 y。例如，&rsquo;z|food&rsquo; 能匹配 &ldquo;z&rdquo; 或 &ldquo;food&rdquo;。&rsquo;(z|f)ood&rsquo; 则匹配 &ldquo;zood&rdquo; 或 &ldquo;food&rdquo;。
+                                <br /> [xyz] 字符集合。匹配所包含的任意一个字符。例如， &lsquo;[abc]&rsquo; 可以匹配 &ldquo;plain&rdquo; 中的 &lsquo;a&rsquo;。
+                                <br /> [^xyz] 负值字符集合。匹配未包含的任意字符。例如， &lsquo;[^abc]&rsquo; 可以匹配 &ldquo;plain&rdquo; 中的&rsquo;p&rsquo;。
+                                <br /> [a-z] 字符范围。匹配指定范围内的任意字符。例如，&rsquo;[a-z]&rsquo; 可以匹配 &lsquo;a&rsquo; 到 &lsquo;z&rsquo; 范围内的任意小写字母字符。
+                                <br /> [^a-z] 负值字符范围。匹配任何不在指定范围内的任意字符。例如，&rsquo;[^a-z]&rsquo; 可以匹配任何不在 &lsquo;a&rsquo; 到 &lsquo;z&rsquo; 范围内的任意字符。
+                                <br /> \b 匹配一个单词边界，也就是指单词和空格间的位置。例如， &lsquo;er\b&rsquo; 可以匹配&rdquo;never&rdquo; 中的 &lsquo;er&rsquo;，但不能匹配 &ldquo;verb&rdquo; 中的 &lsquo;er&rsquo;。
+                                <br /> \B 匹配非单词边界。&rsquo;er\B&rsquo; 能匹配 &ldquo;verb&rdquo; 中的 &lsquo;er&rsquo;，但不能匹配 &ldquo;never&rdquo; 中的 &lsquo;er&rsquo;。
+                                <br /> \cx 匹配由 x 指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 &lsquo;c&rsquo; 字符。
+                                <br /> \d 匹配一个数字字符。等价于 [0-9]。
+                                <br /> \D 匹配一个非数字字符。等价于 [^0-9]。
+                                <br /> \f 匹配一个换页符。等价于 \x0c 和 \cL。
+                                <br /> \n 匹配一个换行符。等价于 \x0a 和 \cJ
+                                <br /> \r 匹配一个回车符。等价于 \x0d 和 \cM。
+                                <br /> \s 匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。
+                                <br /> \S 匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。
+                                <br /> \t 匹配一个制表符。等价于 \x09 和 \cI。
+                                <br /> \v 匹配一个垂直制表符。等价于 \x0b 和 \cK。
+                                <br /> \w 匹配包括下划线的任何单词字符。等价于&rsquo;[A-Za-z0-9_]&rsquo;。
+                                <br /> \W 匹配任何非单词字符。等价于 &lsquo;[^A-Za-z0-9_]&rsquo;。
+                                <br /> \xn 匹配 n，其中 n 为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，&rsquo;\x41&rsquo; 匹配 &ldquo;A&rdquo;。&rsquo;\x041&rsquo; 则等价于 &lsquo;\x04&rsquo; &amp; &ldquo;1&rdquo;。正则表达式中可以使用 ASCII 编码。.
+                                <br /> \num 匹配 num，其中 num 是一个正整数。对所获取的匹配的引用。例如，&rsquo;(.)\1&rsquo; 匹配两个连续的相同字符。
+                                <br /> \n 标识一个八进制转义值或一个向后引用。如果 \n 之前至少 n 个获取的子表达式，则 n 为向后引用。否则，如果 n 为八进制数字 (0-7)，则 n 为一个八进制转义值。
+                                <br /> \nm 标识一个八进制转义值或一个向后引用。如果 \nm 之前至少有 nm 个获得子表达式，则 nm 为向后引用。如果 \nm 之前至少有 n 个获取，则 n 为一个后跟文字 m 的向后引用。如果前面的条件都不满足，若 n 和 m 均为八进制数字 (0-7)，则 \nm 将匹配八进制转义值 nm。
+                                <br /> \nml 如果 n 为八进制数字 (0-3)，且 m 和 l 均为八进制数字 (0-7)，则匹配八进制转义值 nml。
+                                <br /> \un 匹配 n，其中 n 是一个用四个十六进制数字表示的 Unicode 字符。例如， \u00A9 匹配版权符号 (?)。</p>
+                            <h4 id="javascript17"><a name="user-content-javascript17" href="#javascript17" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>javascript的17种正则表达式</h4>
+                            <p>&rdquo;^\d+$&rdquo;　　//非负整数（正整数 + 0）
+                                <br /> &ldquo;^[0-9]
+                                <em>[1-9][0-9]</em>$&rdquo;　　//正整数
+                                <br /> &ldquo;^((-\d+)|(0+))$&rdquo;　　//非正整数（负整数 + 0）
+                                <br /> &ldquo;^-[0-9]
+                                <em>[1-9][0-9]</em>$&rdquo;　　//负整数
+                                <br /> &ldquo;^-?\d+$&rdquo;　　　　//整数
+                                <br /> &ldquo;^\d+(\.\d+)?$&rdquo;　　//非负浮点数（正浮点数 + 0）
+                                <br /> &ldquo;^(([0-9]+\.[0-9]
+                                <em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>\.[0-9]+)|([0-9]<em>[1-9][0-9]</em>))$&rdquo;　　//正浮点数
+                                <br /> &ldquo;^((-\d+(\.\d+)?)|(0+(\.0+)?))$&rdquo;　　//非正浮点数（负浮点数 + 0）
+                                <br /> &ldquo;^(-(([0-9]+\.[0-9]
+                                <em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>\.[0-9]+)|([0-9]<em>[1-9][0-9]</em>)))$&rdquo;　　//负浮点数
+                                <br /> &ldquo;^(-?\d+)(\.\d+)?$&rdquo;　　//浮点数
+                                <br /> &ldquo;^[A-Za-z]+$&rdquo;　　//由26个英文字母组成的字符串
+                                <br /> &ldquo;^[A-Z]+$&rdquo;　　//由26个英文字母的大写组成的字符串
+                                <br /> &ldquo;^[a-z]+$&rdquo;　　//由26个英文字母的小写组成的字符串
+                                <br /> &ldquo;^[A-Za-z0-9]+$&rdquo;　　//由数字和26个英文字母组成的字符串
+                                <br /> &ldquo;^\w+$&rdquo;　　//由数字、26个英文字母或者下划线组成的字符串
+                                <br /> &ldquo;^[\w-]+(\.[\w-]+)
+                                <em>@[\w-]+(\.[\w-]+)+$&rdquo;　　　　//email地址 <br />
+&ldquo;^[a-zA-z]+://(\w+(-\w+)</em>)(\.(\w+(-\w+)<em>))</em>(\?\S*)?$&rdquo;　　//url </p>
+                        </article>
+                    </div>
+                </div>
+                <div class="bd-sidebar">
+                    <div class="sidebar-column sidebar">
+                        <div class="sidebar-container">
+                            <h3><i class="iconfont icon-caidan"></i>子类列表</h3>
+                            <ul class="sidebar-menu">
+                                <li><a href="#">js&jq</a></li>
+                                <li><a href="#">css</a></li>
+                                <li><a href="#">php&java</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-hot sidebar">
+                        <div class="sidebar-container">
+                            <h3><i></i>类目列表</h3>
+                            <ul class="sidebar-menu">
+                                <li><a href="#">web特效</a></li>
+                                <li><a href="#">页面动态</a></li>
+                                <li><a href="#">功能开发</a></li>
+                                <li><a href="#">插件封装</a></li>
+                                <li><a href="#">Js小游戏</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="wrap">
+            <div class="clearft">
+                <div class="fl footer-left clearft">
+                    <h2 class="fl footer-blog-name">swwinone blog</h2>
+                    <p class="fl introduce">越努力越幸运</p>
+                </div>
+                <div class="fr footer-right">
+                </div>
+            </div>
+            <div class="copyright-wrap clearft">
+                <p class="fl copyright">Copyright © swwinone blog All Rights Reserved.&nbsp;</p>
+                <p class="fr">
+                    <a href="https://swwinone.github.io/swwinone.html">Theme by swwinone</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- 回到最上 -->
+    <div class="iconfont icon-xiaohuojian" style="right: 30px;"></div>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

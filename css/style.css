@@ -1,0 +1,196 @@
+div.first-screen {
+    position: relative;
+}
+
+div.first-screen,
+div.first-screen ul.banner,
+div.first-screen ul.banner li {
+    width: 100%;
+    height: 100%;
+}
+
+div.first-screen::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(100, 100, 100, .2);
+}
+
+div.first-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/1.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+div.first-screen div.txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 97;
+    width: 900px;
+    height: 400px;
+    margin: -180px 0 0 -450px;
+    text-align: center;
+    color: #fff;
+}
+
+div.first-screen div.txt .move-left {
+    transform: translateX(-150px);
+    animation: text_move .7s forwards;
+}
+
+div.first-screen div.txt p {
+    opacity: 0;
+    margin-top: 20px;
+}
+
+div.first-screen div.txt h1 {
+    opacity: 0;
+    width: 270px;
+    height: 60px;
+    margin: 50px auto;
+    color: transparent;
+    transform: translateX(150px);
+    animation: text_move .7s forwards;
+}
+
+div.first-screen div.txt h1 span {
+    display: block;
+    width: 270px;
+    height: 60px;
+    color: #fff;
+}
+
+div.first-screen div.txt .move-right {
+    transform: translateX(150px);
+    animation: text_move 1s forwards;
+}
+
+@keyframes text_move {
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+/**/
+
+.main {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 60px 10px;
+    background: #f1f1f1;
+}
+
+.main div.wrap {
+    margin-top: 30px;
+}
+
+.main .demo-title {
+    text-align: center;
+}
+
+.main .demo-title h2 {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border-bottom: 3px solid #000;
+    font-size: 30px;
+}
+
+.main .demo-title .more {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.main .demo-title .more i {
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    width: 0;
+    border: 1px solid transparent;
+    transition: .7s;
+}
+
+.main .demo-title .more:hover i {
+    width: 100%;
+    border-color: #000;
+}
+
+.main .article-box {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.main article {
+    float: left;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: calc(100% / 3 - 30px);
+    height: 350px;
+    margin: 30px 15px 0;
+    padding-bottom: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px #ccc;
+    transition: .7s;
+}
+
+.main article .article-img {
+    display: block;
+    margin-bottom: 10px;
+    height: 201px;
+}
+
+.main article .article-img img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+}
+
+.main article:hover {
+    top: 10px;
+}
+
+.main article div.con {
+    padding: 10px 20px;
+}
+
+.main article div.con p {
+    height: 75px;
+}
+
+.main article .article-title a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 24px;
+    color: #282828;
+    text-align: center;
+}
+
+.main article .article-content {
+    text-indent: 16px;
+    color: #999999;
+}
+
+.main article .article-more {
+    display: block;
+    margin-top: 20px;
+    text-align: right;
+    color: #5fcfed;
+}
